@@ -1,0 +1,39 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+	background-image: url(../img/fondo.jpg);
+	/*background-size: cover para ajustar la imagen en el fondo*/
+	background-size: cover;
+  min-height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+#section-table {
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 5%;
+	border: 1px solid black;
+}
+
+h2 {
+  text-align: center;
+}
+
+.navbar {
+  border-radius: 0 0 15px 15px;
+}
+
+.card {
+	text-align: center;
+}
+
+#logo{
+  width: 10%;
+}

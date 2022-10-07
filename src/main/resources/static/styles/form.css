@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+	background-image: url(../img/fondo.jpg);
+	/*background-size: cover para ajustar la imagen en el fondo*/
+	background-size: cover;
+  min-height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+
+h2 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+/*Estilo para el formulario*/
+#section-form form {
+	background-color: white;
+	width: 350px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+#section-form {
+  display: flex;
+	justify-content: center;
+	padding-top: 50px;
+}
+
+#cont-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.card {
+	text-align: center;
+}
+
+.navbar {
+  border-radius: 0 0 15px 15px;
+}
+
+#logo{
+  width: 10%;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<!--Cabecera de la página y el es es para el idioma-->
+	<head lang="es">
+		<!--Teclado de español-->
+		<meta charset="UTF-16" />
+		<!--Titulo de mi página-->
+		<title>Mascotas con amor</title>
+		<!--Cargando la página de css con la hoja de estilos-->
+		<link rel="stylesheet" href="styles/form.css" />
+		<!--código de la página de bootstrap para poder trabajar-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+			integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+			integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<!--Cuerpo del documento-->
+	<body>
+		<!--Encabezado de la página-->
+		<header>
+			<!--Barra de navegación-->
+			<!--Hay que poner active a la pagina que esta siendo usada en las clases-->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				<div class="container-fluid">
+					<img id= "logo" src="./img/logo.PNG" alt="Logo">
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<!--Opciones de navegación-->
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="./inicio.html">Inicio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="./index.html">Consultar Mascota</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="#" id="link-create">Registrar mascota</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section id="section-form">
+				<!--Crear formulario-->
+				<!--La etiqueta form genera el onsubmit por lo tanto vamos a:-->
+				<!--con onsubmit hacemos que pueda llamar la función de js-->
+				<!-- el onsubmit recarga la página por lo tanto debemos apagarlo-->
+				<!--Los for es para relacionar el label con el input-->
+				<!--El atributo name permite a un script acceder a su contenido.
+				Básicamente cuando el evento carga la información mediante el name podemos
+				acceder a ella, sin necesidad de usar precisamente id con todo el codigo largo-->
+				<form onsubmit="get_data_form(event)" class="mb-3" id="form">
+					<!--Nombre de la mascota-->
+					<label for="nombre_mascota" class="form-label">
+						Nombre de su mascota :D :
+					</label>
+					<input name="nombre_mascota" type="text" id="nombre_mascota" class="form-control" />
+					<br />
+					<!--Nombre del dueño-->
+					<label for="nombre_dueno" class="form-label">
+						Nombre del dueño
+					</label>
+					<input name="nombre_dueno" type="text" id="nombre_dueno" class="form-control" />
+					<br />
+					<!--Apellido del dueño-->
+					<label for="apellido_dueno" class="form-label">
+						Apellido del dueño
+					</label>
+					<input name="apellido_dueno" type="text" id="apellido_dueno" class="form-control" />
+					<br />
+					<!--Especie de la mascota-->
+					<label for="especie_mascota" class="form-label">Especie de su mascota: </label>
+					<input name="especie_mascota" type="text" id="especie_mascota" class="form-control" />
+					<br />
+					<!--Raza-->
+					<label for="raza" class="form-label">Raza de la mascota: </label>
+					<input name="raza" type="text" id="raza" class="form-control" />
+					<br />
+					<!--Edad de la mascota-->
+					<label for="edad" class="form-label">Edad de la mascota: </label>
+					<input name="edad" type="number" id="edad" class="form-control" />
+					<br />
+					<!--Observación-->
+					<label for="comentarios" class="form-label">Comentarios adicionales:</label>
+					<br />
+					<textarea
+						id="comentarios"
+						name="comentarios"
+						rows="5"
+						cols="80"
+						class="form-control"
+					></textarea>
+					<br />
+					<div id="cont-btn">
+						<!--Centrar botón-->
+						<button type="submit" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-form">
+							Registrar la mascota
+						</button>
+					</div>
+				</form>
+			</section>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registrando la mascota</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="mensaje_creado">
+              <!--Aca mediante Js insertamos un mensaje-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="eliminar">Okey =D</button>
+            </div>
+          </div>
+        </div>
+      </div>
+		</main>
+		<footer>
+			<div class="card">
+				<div class="card-header">
+					<em> Copyright © 2022 Huellitas - Todos los derechos Reservados </em></br>
+					<em>Pagina desarrollada por <a href="https://github.com/AIONA07/Huellitas" target="_blank">Martha</a></em>
+				</div>
+			</div>
+		</footer>
+
+		<!--Cargar Scripts-->
+		<script src="scripts/form.js"></script>
+	</body>
+</html>

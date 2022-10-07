@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria</title>
+    <link rel="stylesheet" href="styles/inicio.css">
+    <!--Cargar bootstrap-->
+		<link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+        crossorigin="anonymous"
+    />
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+  <header>
+		<!--Barra de navegación-->
+		<!--Hay que poner active a la pagina que esta siendo usada en las clases-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <img id= "logo" src="./img/logo.PNG" alt="Logo">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!--Opciones de navegación-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Consultar Mascota</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./form.html">Registrar mascota</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="texto">
+      <article class="texto-mascotas"">
+        <h2>Huellitas</h2>
+        <p>Huellitas es un gestor de mascotas para llevar un registro de una veterinaria de cada visita y del proceso que amerita, de esta manera brindo un mensaje de amor a aquellos los seres sin voz, pero que tienen un ángel terrenal que los ayudará hasta el fin.</p>
+        <img src="./img/mascotas.jpg" alt="todas las mascotas">
+      </article>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Borrar Mascota</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Desea quitar la mascota?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"  onclick="delete_mascota()">Seguro que sí</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+  <footer>
+    <div class="card">
+      <div class="card-header">
+        <em> Copyright © 2022 Huellitas - Todos los derechos Reservados </em></br>
+        <em>Pagina desarrollada por <a href="https://github.com/AIONA07/Huellitas" target="_blank">Martha</a></em>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
